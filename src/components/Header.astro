@@ -1,0 +1,72 @@
+---
+
+---
+<header>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+</header>
+<style>
+
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    nav li {
+        margin-right: 1.5rem;
+        position: relative;
+    }
+
+    nav li:last-child {
+        margin-right: 0;
+    }
+
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        padding: 5px 10px;
+        border-radius: 5px;
+        transition: all 0.3s ease; /* Adding transition */
+    }
+
+    nav a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Active link state example (you may need to adjust this based on your routing) */
+    nav a.active {
+        background: linear-gradient(to right, #4CAF50, #8BC34A);
+        color: #000;
+    }
+</style>
+<script>
+const currentPage = window.location.pathname;
+const homeLink = document.querySelector("#home-link");
+const aboutLink = document.querySelector("#about-link");
+const contactLink = document.querySelector("#contact-link");
+
+if (currentPage === "/") {
+  homeLink.classList.add("active");
+} else if (currentPage === "/about") {
+  aboutLink.classList.add("active");
+} else if (currentPage === "/contact") {
+  contactLink.classList.add("active");
+}
+</script>
