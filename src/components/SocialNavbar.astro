@@ -1,0 +1,46 @@
+---
+import '@fortawesome/fontawesome-free/css/all.min.css';
+---
+<style>
+    .dark-social-navbar-wrapper {
+        display: flex;
+        margin-top: 5px;
+        justify-content: center;
+    }
+
+    .dark-social-navbar {
+        display: flex;
+        gap: 15px;
+        padding: 10px 20px;
+        border-radius: 8px;
+    }
+
+    .dark-social-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #3a3f4b;
+        color: #fff;
+        text-decoration: none;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .dark-social-icon:hover {
+        background-color: #4a4f5b;
+        transform: scale(1.1);
+    }
+</style>
+
+<div class="dark-social-navbar-wrapper">
+    <div class="dark-social-navbar">
+        <a href="#" class="dark-social-icon"><i class="fab fa-github"></i></a>
+        <a href="#" class="dark-social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="dark-social-icon"><i class="fa fa-book"></i></a>
+        <a href="#" class="dark-social-icon"><i class="fab fa-discord"></i></a>
+        <a href="#" class="dark-social-icon"><i class="fa fa-envelope"></i></a>
+        <a href="#" class="dark-social-icon"><i class="fa fa-globe"></i></a>
+    </div>
+</div>
