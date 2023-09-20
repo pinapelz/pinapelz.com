@@ -1,0 +1,124 @@
+---
+import Layout from "../layouts/Layout.astro";
+import SocialNavbar from "../components/SocialNavbar.astro";
+import Card from "../components/Card.astro";
+import ShapesBackground from "../components/ShapesBackground.astro";
+---
+
+<Layout title="Projects">
+  <main>
+    <h1>Projects</h1>
+    <ul role="list" class="link-card-grid">
+      <Card
+        href="https://github.com/pinapelz/ytmp3AutoTag"
+        title="ytmp3AutoTag"
+        body="JSwing application that downloads YouTube videos as MP3 and automatically tags them with metadata from the video"
+        language="Java"
+        languageColor="#b07219"
+      />
+      <Card
+        href="https://github.com/pinapelz/youtube-timed-playlist"
+        title="YouTube Timed Playlist"
+        body="React JS web app that allows users to create YouTube playlists with custom start and end times for each video"
+        language="Javascript"
+        languageColor="#f1e05a"
+      />
+      <Card
+        href="https://github.com/pinapelz/JHolodex"
+        title="JHolodex"
+        body="Object-Oriented Java wrapper for the Holodex API written with Retrofit2"
+        language="Java"
+        languageColor="#b07219"
+      />
+      <Card
+        href="https://github.com/pinapelz/VTScheduleXIV"
+        title="VTScheduleXIV"
+        body="FFXIV Dalamud plugin that displays the schedule of upcoming VTuber streams in-game"
+        language="C#"
+        languageColor="#178600"
+      />
+      <Card
+        href="https://github.com/pinapelz/NijiTrack"
+        title="Nijitrack"
+        body="Python scripts that records historical subscriber data of YouTube channels and generates HTML reports of the data"
+        language="Python"
+        languageColor="#3572A5"
+      />
+      <Card
+        href="https://github.com/Patchwork-Archive"
+        title="Patchwork Archive"
+        body="An archival project for music created by Virtual YouTubers"
+        language="HTML"
+        languageColor="#e34c26"
+      />
+      <Card
+        href="https://github.com/pinapelz/yet-another-lavaplayer-bot"
+        title="Yet Another Lavaplayer Bot"
+        body="Self-hosted JDA Discord music bot that uses Lavaplayer to play music from YouTube, Soundcloud, etc in Discord voice channels"
+        language="Java"
+        languageColor="#b07219"
+      />
+      <Card
+        href="https://github.com/pinapelz/vtuber-captcha"
+        title="VTuber Captcha"
+        body="Python Flask API that serves fun VTuber related captcha data"
+        language="Python"
+        languageColor="#3572A5"
+      />
+      <Card
+        href="https://github.com/pinapelz/link-shortener-moekyun.me"
+        title="moekyun.me Link Shortener"
+        body="Python Flask link shortener with built in support for custom URLs, special features, and Vercel deployment"
+        language="Python"
+        languageColor="#3572A5"
+      />
+
+      <Card
+        href="https://github.com/pinapelz/ffxiv-macro-time-counter"
+        title="FFXIV Macro Time Counter"
+        body="Calculator that determines the time it takes to execute a given macro in Final Fantasy XIV with options for consumables"
+        language="Typescript"
+        languageColor="#2b7489"
+      />
+      <Card
+        href="https://github.com/pinapelz/cloudflare-worker-d1-url-shortener"
+        title="Cloudflare D1 Link Shortener"
+        body="Link shortener that uses Cloudflare Workers and Severless SQL D1 database"
+        language="Javascript"
+        languageColor="#f1e05a"
+      />
+      <Card
+        href="https://github.com/pinapelz/Sapphire"
+        title="Sapphire (Contributed)"
+        body="A Final Fantasy XIV Server Emulator written in C++"
+        language="C++"
+        languageColor="#f34b7d"
+      />
+    </ul>
+  </main>
+  <SocialNavbar />
+  <ShapesBackground />
+  <style>
+    main {
+      margin: auto;
+      padding: 1rem;
+      width: 1200px;
+      color: white;
+      font-size: 20px;
+      line-height: 1.6;
+    }
+    .link-card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(24ch, 1fr));
+      gap: 2rem;
+      padding: 0;
+    }
+    @media (max-width: 768px) {
+    .link-card-grid {
+      display: grid;
+      grid-template-columns: repeat(1, minmax(12ch, 1fr));
+      gap: 2rem;
+      padding: 0;
+    }
+  </style>
+</Layout>
