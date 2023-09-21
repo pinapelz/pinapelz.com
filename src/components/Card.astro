@@ -1,116 +1,130 @@
-User
 ---
 interface Props {
-	title: string;
-	body: string;
-	href: string;
-	language: string;
-	languageColor: string;
+  title: string;
+  body: string;
+  href: string;
+  language: string;
+  languageColor: string;
 }
 
 const { href, title, body, language, languageColor } = Astro.props;
 ---
 
 <li class="link-card">
-	<a href={href}>
-		<div class="content-container">
-			<h2>{title}</h2>
-			<div class="language-container">
-				<span class="dot" style={{ backgroundColor: languageColor }}></span>
-				<span class="language">{language}</span>
-			</div>
-			<div class="separator"></div>
-			<p>{body}</p>
-		</div>
-	</a>
+  <a href={href}>
+    <div class="content-container">
+      <h2>{title}</h2>
+      <div class="language-container">
+        <span class="dot" style={{ backgroundColor: languageColor }}></span>
+        <span class="language">{language}</span>
+      </div>
+      <div class="separator"></div>
+      <p>{body}</p>
+    </div>
+  </a>
 </li>
 
 <style>
-	.link-card {
-		list-style: none;
-		display: flex;
-		padding: 1px;
-		background-color: #23262d;
-		background-image: none;
-		background-size: 400%;
-		border-radius: 7px;
-		background-position: 100%;
-		align-items: flex-start;
-		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-		position: relative;
-		overflow: hidden;
-	}
+  .link-card {
+    list-style: none;
+    display: flex;
+    padding: 1px;
+    background-color: #23262d;
+    background-image: none;
+    background-size: 400%;
+    border-radius: 7px;
+    background-position: 100%;
+    align-items: flex-start;
+    transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+  }
 
-	.link-card > a {
-		width: 100%;
-		text-decoration: none;
-		line-height: 1.4;
-		padding: calc(1.5rem - 1px);
-		border-radius: 8px;
-		color: white;
-		background-color: #23262d;
-		opacity: 0.8;
-		display: flex;
-		flex-direction: column; 
-		align-items: flex-start;
-		justify-content: space-between;
-		position: relative; /* Add position property */
-		box-sizing: border-box; /* Include padding in the element's total width/height. */
-		height: 100%; /* Ensure it takes the full height of its parent. */
-	}
+  .link-card > a {
+    width: 100%;
+    text-decoration: none;
+    line-height: 1.4;
+    padding: calc(1.5rem - 1px);
+    border-radius: 8px;
+    color: white;
+    background-color: #23262d;
+    opacity: 0.8;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    position: relative; /* Add position property */
+    box-sizing: border-box; /* Include padding in the element's total width/height. */
+    height: 100%; /* Ensure it takes the full height of its parent. */
+  }
 
-	.content-container {
-		display: flex;
-		flex-direction: column;
-		gap: 10px;
-		margin-bottom: 0; 
-	}
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 0;
+  }
 
-	h2 {
-		margin: 0;
-		font-size: 1.25rem;
-		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-	}
+  h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
 
-	p {
-		margin-top: 0.5rem;
-		margin-bottom: 0;
-	}
+  p {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+  }
 
-	.separator {
-		height: 1px;
-		width: 100%;
-		background-color: rgba(255, 255, 255, 0.1);
-	}
+  .separator {
+    height: 1px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
 
-	.language-container {
-		display: flex;
-		align-items: center;
-		gap: 5px;
-		margin: 0;
-	}
+  .language-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 0;
+  }
 
-	.dot {
-		width: 10px;
-		height: 10px;
-		border-radius: 50%;
-		display: inline-block;
-	}
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+  }
 
-	.language {
-		font-weight: bold;
-		font-size: 1rem;
-		color: rgba(255, 255, 255, 0.8);
-	}
+  .language {
+    font-weight: bold;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+  }
 
-	.link-card:is(:hover, :focus-within) {
-		background-position: 0;
-		background-image: var(--accent-gradient);
-		
-	}
+  .link-card:is(:hover, :focus-within) {
+    background-position: 0;
+    background-image: var(--accent-gradient);
+  }
 
-	.link-card:is(:hover, :focus-within) h2 {
-		color: rgb(var(--accent-light));
-	}
+  .link-card:is(:hover, :focus-within) h2 {
+    color: rgb(var(--accent-light));
+  }
+  @media (max-width: 1020px) {
+    .link-card {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      max-width: 100%;
+      width: 100%px;
+      word-wrap: break-word;
+    }
+    p {
+      margin-top: 0.5rem;
+      margin-bottom: 0;
+      font-size: 24px;
+    }
+  }
 </style>
