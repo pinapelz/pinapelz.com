@@ -20,7 +20,7 @@
   .context h1 {
     text-align: center;
     color: #fff;
-    font-size: 50px;
+    font-size: 3rem; /* Using rem for scalable font size */
   }
 
   .circles {
@@ -37,12 +37,13 @@
     position: absolute;
     display: block;
     list-style: none;
-    width: 20px;
-    height: 20px;
+    width: 2vw;
+    height: 2vw;
     background: rgba(255, 255, 255, 0.2);
     animation: animate 25s linear infinite;
-    bottom: -150px;
+    bottom: -10vw;
   }
+
 
   .circles li:nth-child(1) {
     left: 25%;
@@ -131,5 +132,17 @@
       opacity: 0;
       border-radius: 50%;
     }
+  }
+  @media (max-width: 768px) {
+    .context h1 {
+      font-size: 2rem;
+    }
+
+    .circles li {
+      width: 5vw;
+      height: 5vw;
+      bottom: -15vw;
+    }
+    
   }
 </style>

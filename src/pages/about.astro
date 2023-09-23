@@ -1,8 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import SocialNavbar from "../components/SocialNavbar.astro";
-import ShapesBackground from "../components/ShapesBackground.astro";
 import DiscordStatus from "../components/DiscordStatus.astro";
+import DiscordActivity from "../components/DiscordActivity.astro";
 ---
 
 <Layout title="About">
@@ -18,26 +18,36 @@ import DiscordStatus from "../components/DiscordStatus.astro";
         much just MMOs, JRPGs, and Visual Novels.
       </p>
     </div>
-    <div class="grid-item"> <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=pinapelz&layout=pie&hide=makefile&theme=dark&langs_count=12" alt="Github Language Stats" style="width: 400px; height: auto" ></div>
     <div class="grid-item">
-        <img src="https://xiv-character-cards.drakon.cloud/characters/id/30300645.png" style="width: 740px; height: auto">
-    
-        </div>
-    
+      <p class="introduction">
+        <h2>推しししししし!!!!</h2>
+        <img src="https://files.pinapelz.com/FM5RJDxUYAMqkOF.jpeg" style="width: 350px; height: auto; align-items: center; margin-bottom: 15px;"/>
+        <img src="https://files.catbox.moe/zawgke.webp" style="width: 300px; height: auto; align-items: right;"/>
+      </p>
+  </div>
     <div class="grid-item">
-        <p class="introduction">
-            <img src="https://files.catbox.moe/2aioik.webp" style="width: 300px; height: auto; align-items: center;"/>
-            <DiscordStatus />
-        </p>
+      <h2>What am I up to?</h2>
+      <DiscordStatus />
+      <DiscordActivity />
+      
     </div>
-      <div class="grid-item">
-        <img src="https://files.pinapelz.com/pso2ngs-2232-collab.png" width="740px; height: auto"> 
-      </div>
+    <div class="grid-item"> 
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=pinapelz&layout=pie&hide=makefile&theme=dark&langs_count=12" alt="Github Language Stats" style="width: 400px; height: auto" >
+    </div>
+    <div class="grid-item">
+      <h2>My Final Fantasy XIV Character!</h2>
+        <img src="https://xiv-character-cards.drakon.cloud/characters/id/30300645.png" style="width: 740px; height: auto">
+    </div>
   </div>
   <SocialNavbar />
 </Layout>
-<ShapesBackground />
+
 <style>
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+  }
   .grid-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -55,6 +65,16 @@ import DiscordStatus from "../components/DiscordStatus.astro";
 
   h1 {
     font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 1em;
+    transition: transform 0.3s ease-in-out;
+    color: rgba(255, 255, 255, 0.742);
+  }
+
+  h2 {
+    font-size: 2rem;
     font-weight: 700;
     line-height: 1;
     text-align: center;
