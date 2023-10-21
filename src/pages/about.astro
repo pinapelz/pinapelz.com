@@ -3,42 +3,61 @@ import Layout from "../layouts/Layout.astro";
 import SocialNavbar from "../components/SocialNavbar.astro";
 import DiscordStatus from "../components/DiscordStatus.astro";
 import DiscordActivity from "../components/DiscordActivity.astro";
+import RSSFeed from "../components/RSSFeed.astro";
 ---
 
 <Layout title="About">
   <div class="grid-container">
     <div class="grid-item">
-      <h1 class="welcome-text-gradient">About Me</h1>
-    </div>
-    <div class="grid-item">
-      <p class="introduction">
-        I'm am avid virtual youtuber (vtuber) + anime enjoyer so you may see a
-        trend in what my projects. Programming stuff is one of my hobbies but I
-        also spend my time playing video games although admittedly its pretty
-        much just MMOs, JRPGs, and Visual Novels.
+      <h1 style="margin-bottom: 30px;">About</h1>
+      <p style="line-height: 1.4;" class="introduction">
+        Since you're here, I guess you want to know a bit more about me. Outside of programming random projects here and there, I'm
+        a conisseur of anime and VTubers (although you might've already figured out that from my projects). I also enjoy gaming, although
+        nearly all the games I've enjoyed are either MMORPGS, JRPGS, or Visual Novels.
       </p>
     </div>
     <div class="grid-item">
-      <p class="introduction">
-        <h2>推し!!!!</h2>
-        <a href="https://www.youtube.com/@Rosemi_Lovelock"><img src="https://files.pinapelz.com/FM5RJDxUYAMqkOF.jpeg" style="width: 350px; height: auto; align-items: center; margin-bottom: 15px;"/></a>
-        <a href="https://www.youtube.com/@ErinaMakina"><img src="https://files.catbox.moe/zawgke.webp" style="width: 300px; height: auto; align-items: right;"/></a>
-      </p>
-  </div>
-    <div class="grid-item">
-      <h2>What am I up to?</h2>
+      <h2 style="margin-bottom: 30px;">What am I up to right now?</h2>
       <DiscordStatus />
       <DiscordActivity />
-      
+      <p style="font-size: 1.3rem;">Yes. Its a live status of my Discord status</p>
+      <a style="font-size: small;" href="https://github.com/Phineas/lanyard">Live data courtesy of Lanyard</a>
     </div>
     <div class="grid-item"> 
       <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=pinapelz&layout=pie&hide=makefile&theme=dark&langs_count=12" alt="Github Language Stats" style="width: 400px; height: auto" >
+      <p style="font-size: large; line-height: 1.4;">The first programming language I ever learned was Java, although after learning Python, that has become what I primarily use
+        since its super easy to just get something running. A lot of my C++ experince comes from competitive robotics in high school.
+      </p>
+      <a style="font-size: small;" href="https://github.com/anuraghazra/github-readme-stats">Live data courtesy of anuraghazra/github-readme-stats</a>
     </div>
     <div class="grid-item">
       <h2>My Final Fantasy XIV Character!</h2>
         <img src="https://xiv-character-cards.drakon.cloud/characters/id/30300645.png" style="width: 740px; height: auto">
+        <p style="font-size: 1.3rem">FFXIV is one of my favorite MMORPGs of all time so I figured I'd also share my character in case you were curious</p>
+        <a style="font-size: small; margin-top: 5px;" href="https://github.com/xivapi/XIV-Character-Cards">Live data courtesy of xivapi/XIV-Character-Cards</a>
     </div>
-  </div>
+    <div class="grid-item">
+        <h2 style="margin-bottom: 10px;">推し! (Oshi!)</h2>
+        <p align="center" style="margin-bottom: 10px;">VTubers I enjoy watching</p>
+        <div class="profile">
+          <a style="text-decoration:none; margin-bottom: 10px;"href="https://www.youtube.com/@Rosemi_Lovelock">
+            @RosemiLovelock
+            <img src="https://files.pinapelz.com/FM5RJDxUYAMqkOF.jpeg" style="width: 350px; height: auto;"/>
+          </a>
+        </div>
+        <div class="profile">
+          <a style="text-decoration:none; margin-bottom: 10px;" href="https://www.youtube.com/@ErinaMakina">
+            @ErinaMakina
+            <img src="https://files.catbox.moe/zawgke.webp" style="width: 300px; height: auto;"/>
+          </a>
+        </div>
+      </div>  
+      <div class="grid-item">
+        <h2>MyAnimeList - What am I watching?</h2>
+        <p style="small" align="center">Don't judge me too hard :(</p>
+        <RSSFeed url="https://myanimelist.net/rss.php?type=rw&u=pinapelz" />
+        <a style="font-size: small;" href="https://myanimelist.net/rss.php">Live data courtesy of MyAnimeList</a>
+      </div>
   <SocialNavbar />
 </Layout>
 
@@ -83,7 +102,17 @@ import DiscordActivity from "../components/DiscordActivity.astro";
     color: rgba(255, 255, 255, 0.742);
   }
 
-  p {
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 1em;
+    transition: transform 0.3s ease-in-out;
+    color: rgba(255, 255, 255, 0.742);
+  }
+
+  a,p {
     margin-top: 0.5rem;
     margin-bottom: 0;
     color: rgba(255, 255, 255, 0.742);
