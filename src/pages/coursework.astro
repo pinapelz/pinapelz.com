@@ -1,0 +1,187 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+// Replace the arrays below with your actual coursework data
+const icsCourses = [
+  {
+    title: "I&C SCI 31 -  Introduction to Programming",
+    description:
+      "Introduction to fundamental concepts and techniques for writing software in a high-level programming language. Covers the syntax and semantics of data types, expressions, exceptions, control structures, input/output, methods, classes, and pragmatics of programming.",
+  },
+  {
+    title: "I&C SCI 32 -  Programming with Software Libraries",
+    description:
+      "Construction of programs for problems and computing environments more varied than in I&C SCI 31. Using library modules for applications such as graphics, sound, GUI, database, Web, and network programming. Language features beyond those in I&C SCI 31 are introduced as needed.",
+  },
+  {
+    title: "I&C SCI 33 -  Programming with Software Libraries",
+    description:
+      "Intermediate-level language features and programming concepts for larger, more complex, higher-quality software. Functional programming, name spaces, modules, class protocols, inheritance, iterators, generators, operator overloading, reflection. Analysis of time and space efficiency.",
+  },
+  {
+    title: "I&C SCI 6B - Boolean Logic and Discrete Structures.",
+    description:
+      "Relations and their properties; Boolean algebras, formal languages; finite automata.",
+  },
+];
+
+const in4mtxCourses = [
+  {
+    title: "IN4MATX 43 - Introduction to Software Engineering.",
+    description:
+      "Concepts, methods, and current practice of software engineering. Large-scale software production, software life cycle models, principles and techniques for each stage of development.",
+  },
+];
+---
+
+<Layout title="Pinapelz">
+  <h1>Relevant Coursework</h1>
+  <div class="coursework-container">
+    <div class="course-segment">
+      <h2 class="text-gradient">ICS Courses</h2>
+      <ul>
+        {
+          icsCourses.map((course) => (
+            <li class="course">
+              <h3>{course.title}</h3>
+              <p class="course-description">{course.description}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <!-- IN4MTX Courses -->
+    <div class="course-segment">
+      <h2 class="text-gradient">IN4MTX Courses</h2>
+      <ul>
+        {
+          in4mtxCourses.map((course) => (
+            <li class="course">
+              <h3>{course.title}</h3>
+              <p class="course-description">{course.description}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+  </div>
+</Layout>
+<style>
+  @import url("https://fonts.googleapis.com/css?family=Noto:400,700");
+
+  * {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  body {
+    font-family: "Noto", sans-serif;
+    height: 100%;
+  }
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+  .astro-a {
+    position: absolute;
+    top: -32px;
+    left: 50%;
+    transform: translatex(-50%);
+    width: 220px;
+    height: auto;
+    z-index: -1;
+  }
+  h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 1em;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  h1:hover {
+    transform: scale(1.1);
+  }
+  .welcome-text-gradient {
+    background-image: var(--accent-gradient-purp);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+    transition: background-position 0.3s ease-in-out;
+  }
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+    transition: background-position 0.3s ease-in-out;
+  }
+  .slide-out {
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .center-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+  }
+
+  .coursework-container {
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin: 2rem auto;
+    max-width: 80%;
+  }
+
+  h2.text-gradient {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  .course {
+    padding: 0.5rem 0;
+  }
+
+  .course:last-child {
+    border-bottom: none;
+  }
+
+  .course-description {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-left: 1rem;
+  }
+
+  .course-segment {
+    margin-bottom: 2rem;
+  }
+
+  .course-segment:last-child {
+    margin-bottom: 0;
+  }
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: white;
+  }
+</style>
