@@ -1,0 +1,82 @@
+---
+import Layout from "../layouts/Layout.astro";
+import SocialNavbar from "../components/SocialNavbar.astro";
+import Card from "../components/Card.astro";
+---
+
+<Layout title="Contributions">
+  <main>
+    <h1>Open Source Contributions</h1>
+    
+    <ul role="list" class="link-card-grid">
+    </ul>
+    
+    <section class="contributions-section">
+      <h2>Contributions</h2>
+      <ul role="list" class="contribution-card-grid">
+        <Card
+          href="https://github.com/pinapelz/Sapphire"
+          title="Sapphire"
+          body="Sapphire is a research implementation of the Final Fantasy XIV Online server. The purpose of Sapphire is to gain an understanding of how the retail game servers work internally."
+          language="C++"
+          languageColor="#f34b7d"
+          logoWidth="300px"
+          logoSrc="https://1852825540-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FoWEO5F5fxBARvfBEby5l%2Fuploads%2FN0KFeaD6TNNdujlRXgrw%2Fsapphire_logo.png?alt=media&token=79fdc373-8bf7-41e0-bf66-fb3eaf67d2ca"
+        />
+        <Card
+        href="https://github.com/Patchwork-Archive"
+        title="Patchwork Archive"
+        body="Patchwork Archive aims to archive original songs and covers created by VTubers. With loss of content being a major issue in VTubing (due to termination and graduations), the goal of Patchwork Archive is to preserve a subset of VTuber content for preservation of culture."
+        language="Javascript"
+        languageColor="#f1e05a"
+        logoSrc="https://avatars.githubusercontent.com/u/145537335?s=200&v=4"
+        logoWidth="150px"
+        />
+        <Card
+        href="https://github.com/EBro912/Holodex.NET"
+        title="Holodex.NET"
+        body="A C# wrapper for the Holodex API "
+        language="C#"
+        languageColor="#178600"
+        logoSrc="https://camo.githubusercontent.com/259199b315aaf21baf8665a6613a2c0ffb404ad9fbf3f8441e8d0100a1a71937/68747470733a2f2f692e696d6775722e636f6d2f69527967754c672e706e67"
+        logoWidth="150px"
+        />
+
+      </ul>
+    </section>
+  </main>
+  
+  <SocialNavbar />
+
+  <style>
+    main {
+      margin: auto;
+      padding: 1rem;
+      max-width: 1200px;
+      color: white;
+      font-size: 20px;
+      line-height: 1.6;
+    }
+    .link-card-grid, .contribution-card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(24ch, 1fr));
+      gap: 2rem;
+      padding: 0;
+    }
+    .contribution-card-grid {
+      grid-template-columns: 1fr;  /* Each card takes up one row */
+    }
+    .contributions-section {
+      margin-top: 2rem;
+    }
+    .contributions-section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    @media (max-width: 1020px) {
+      .link-card-grid, .contribution-card-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</Layout>
