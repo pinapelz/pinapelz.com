@@ -7,9 +7,10 @@ interface Props {
   languageColor: string;
   logoSrc?: string; 
   logoWidth?: string;
+  contribution?: string;
 }
 
-const { href, title, body, language, languageColor, logoSrc, logoWidth = '60%' } = Astro.props;
+const { href, title, body, language, languageColor, logoSrc, logoWidth = '60%', contribution="Contributor" } = Astro.props;
 ---
 
 <li class="link-card">
@@ -22,6 +23,7 @@ const { href, title, body, language, languageColor, logoSrc, logoWidth = '60%' }
         <span class="language">{language}</span>
       </div>
       <p>{body}</p>
+      <p>{contribution}</p>
     </div>
   </a>
 </li>

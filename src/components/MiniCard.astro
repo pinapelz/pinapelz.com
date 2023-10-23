@@ -1,0 +1,62 @@
+---
+interface Props {
+    title: string;
+    body: string;
+    href: string;
+    language: string;
+    languageColor: string;
+    logoSrc?: string; 
+    logoWidth?: string;
+    contribution?: string;
+}
+
+const { href, title, body, language, languageColor, logoSrc, logoWidth = '60%', contribution = 'Minor Contributions' } = Astro.props;
+---
+
+<li class="link-card">
+    <a href={href}>
+        {logoSrc && <img src={logoSrc} alt="Project Logo" style={{ maxWidth: logoWidth }} />}
+        <h2>{title}</h2>
+        <div class="language-container">
+            <span class="dot" style={{ backgroundColor: languageColor }}></span>
+            <span class="language">{language}</span>
+        </div>
+        <p>{body}</p>
+        <p>{contribution}</p>
+    </a>
+</li>
+
+<style>
+    .link-card {
+        list-style: none;
+        padding: 1px;
+        background-color: #23262d;
+        border-radius: 6px;
+        color: white;
+    }
+    .link-card > a {
+        text-decoration: none;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+    }
+    .link-card h2 {
+        margin: 0;
+        font-size: 1.25rem;
+    }
+    .link-card p {
+        margin-top: 0.5rem;
+        margin-bottom: 0;
+    }
+    .language-container {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+    }
+</style>
