@@ -42,7 +42,7 @@ const in4mtxCourses = [
       <ul>
         {
           icsCourses.map((course) => (
-            <li class="course">
+            <li class="course mb-4">
               <h3>{course.title}</h3>
               <p class="course-description">{course.description}</p>
             </li>
@@ -57,7 +57,7 @@ const in4mtxCourses = [
       <ul>
         {
           in4mtxCourses.map((course) => (
-            <li class="course">
+            <li class="course mb-4">
               <h3>{course.title}</h3>
               <p class="course-description">{course.description}</p>
             </li>
@@ -108,9 +108,6 @@ const in4mtxCourses = [
     transition: transform 0.3s ease-in-out;
   }
 
-  h1:hover {
-    transform: scale(1.1);
-  }
   .welcome-text-gradient {
     background-image: var(--accent-gradient-purp);
     -webkit-background-clip: text;
