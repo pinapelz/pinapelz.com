@@ -8,9 +8,9 @@ import Card from "../components/Card.astro";
   <main>
     <h1 class="text-4xl font-semibold text-center py-6">Projects</h1>
     <p class="text-center mb-4">
-      Here are some of my projects. For a more complete list, visit my <a class="font-bold" href="https://github.com/pinapelz">Github</a>
+      Here are some of my projects. I love tinkering with stuff so for a more complete list, visit my <a class="font-bold" href="https://github.com/pinapelz">Github</a>
       <br/>
-      Visit here for my <a class="font-bold" href="/contributions">open source contributions</a>
+      Also visit here for some <a class="font-bold" href="/contributions">open source stuff</a>
     </p>
     <ul role="list" class="link-card-grid">
       <Card
@@ -19,25 +19,26 @@ import Card from "../components/Card.astro";
         body="JSwing application that downloads YouTube videos as MP3 and automatically tags the ID3 fields throughing inferring the video metadata"
         language="Java"
         languageColor="#b07219"
-        logoSrc="https://user-images.githubusercontent.com/21994085/232991117-a41a33e1-f45a-4043-aa6a-e886a31d2f11.png"
+        year="2022"
+        tags={["Java", "Swing"]}
       />
       <Card
         href="https://github.com/Patchwork-Archive/Patchwork-Karaoke"
-        title="Patchwork Karaoke"
-        body="A client-side web app that allows the playback of video files synchronzied with both .lrc lyrics and .srv3 subtitles"
+        title="lrc-karaoke-player"
+        body="A client-side web app that allows the playback of video files synchronzied with both .lrc lyrics and YouTube srv3 styled subtitles"
         language="Typescript"
         languageColor="#3178c6"
-        logoWidth="250px"
-        logoSrc="https://github.com/Patchwork-Archive/Patchwork-Karaoke/assets/21994085/758422b4-4be1-4e4e-a5a0-81b06f3930e5"
+        year="2023"
+        tags={["Typescript", "React"]}
       />
       <Card
         href="https://github.com/pinapelz/NijiTrack"
         title="Nijitrack"
-        body="Python and Next.JS application that records and collects historical subscriber count for any subset of YouTube channels."
+        body="Python and Next application that records and collects historical subscriber count for any subset of YouTube channels."
         language="Python"
         languageColor="#3572A5"
-        logoSrc="https://github.com/pinapelz/NijiTrack/assets/21994085/c50e959a-34a9-4509-b892-921f6121c33b"
-        logoWidth="300px"
+        year="2023"
+        tags={["Python", "Next", "Tailwind", "SSR"]}
       />
       <Card
       href="https://github.com/pinapelz/JHolodex"
@@ -45,17 +46,17 @@ import Card from "../components/Card.astro";
       body="Object-Oriented Java wrapper for the Holodex API written with Retrofit2. Published on Maven Central"
       language="Java"
       languageColor="#b07219"
-      logoSrc="https://cdn-icons-png.flaticon.com/512/25/25231.png"
-      logoWidth="150px"
+      year="2023"
+      tags={["Java", "Retrofit2", "Maven"]}
     />
       <Card
         href="https://github.com/Patchwork-Archive"
         title="Patchwork Archive"
-        body="An archival system to help streamline the preservation of any subset of YouTube videos"
+        body="An archival system to help streamline the preservation of any subset of YouTube videos. Fully featured frontend, backend, and worker system for archival"
         language="Javascript"
         languageColor="#f1e05a"
-        logoSrc="https://user-images.githubusercontent.com/21994085/277150135-30b2cabf-07b4-4331-8ebf-709520d42baa.png"
-        logoWidth="300px"
+        year="2023"
+        tags={["React", "Python", "MySQL" , "S3 Storage", "Tailwind"]}
       />
       <Card
         href="https://github.com/pinapelz/yet-another-lavaplayer-bot"
@@ -63,35 +64,35 @@ import Card from "../components/Card.astro";
         body="Self-hosted JDA Discord music bot that uses Lavaplayer to play music from YouTube, Soundcloud, etc in Discord voice channels"
         language="Java"
         languageColor="#b07219"
-        logoWidth="300px"
-        logoSrc="https://user-images.githubusercontent.com/21994085/227810542-26cfb171-9445-4ebf-b57f-575cb5749740.png"
-      />
-      <Card
-        href="https://github.com/pinapelz/vtuber-captcha"
-        title="VTuber Captcha"
-        body="Python Flask API that serves fun VTuber related captcha data. Answers are checked server-side and are not stored locally"
-        language="Python"
-        languageColor="#3572A5"
-        logoWidth="200px"
-        logoSrc="https://github.com/pinapelz/vtuber-captcha/assets/21994085/0a286fab-26bd-4865-93bb-be6830db624e"
+        year="2022"
+        tags={["Java", "JDA"]}
       />
       <Card
         href="https://github.com/pinapelz/link-shortener-moe-vercel"
-        title="Vercel Link Shortener (moekyun.me)"
-        body="Python Flask link shortener with built in support for custom URLs, special features, and Vercel deployment."
-        language="Python"
-        languageColor="#3572A5"
-        logoSrc="https://files.catbox.moe/8lgla6.png"
-        logoWidth="350px"
+        title="Moe Link Shortener"
+        body="A fully serverless Flask link shortener that can be customized and deployed to Vercel with 1 click.Deploys as a fullstack app on Vercel"
+        language="HTML"
+        languageColor="#e34c26"
+        year="2023"
+        tags={["HTML", "Flask", "Python", "PostgreSQL"]}
       />
       <Card
-        href="https://github.com/pinapelz/youtube-timed-playlist"
-        title="YouTube Timed Playlist"
-        body="React JS web app that allows users to create YouTube playlists with custom start and end times for each video"
-        language="Javascript"
-        languageColor="#f1e05a"
-        logoWidth="250px"
-        logoSrc="https://github.com/pinapelz/youtube-timed-playlist/assets/21994085/04575380-9b33-46da-9423-84f4809ec268"
+        href="https://github.com/pinapelz/vtuber-captcha"
+        title="Vtuber Captcha"
+        body="A bring your own UI captcha API that uses VTuber images to verify that the user is human. Verifies answers server-side!"
+        language="Python"
+        languageColor="#3572A5"
+        year="2023"
+        tags={["Python", "Flask", "PostgreSQL"]}
+      />
+      <Card
+        href="https://github.com/pinapelz.com"
+        title="Personal Website"
+        body="This website! Fully built using Astro, a superset of HTML (and so is my blog linked in the buttons down below)"
+        language="Astro"
+        languageColor="#ff5a03",
+        year="2023"
+        tags={["Astro", "HTML", "Tailwind", "Javascript"]}
       />
     </ul>
   </main>

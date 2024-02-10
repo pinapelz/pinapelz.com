@@ -2,17 +2,18 @@
 import Layout from "../layouts/Layout.astro";
 import SocialNavbar from "../components/SocialNavbar.astro";
 import Card from "../components/Card.astro";
-import MiniCard from "../components/MiniCard.astro";
 ---
 
 <Layout title="Contributions">
   <main>
     <h1>Open Source Contributions</h1>
+    <p>
+      I love the idea of open source. Here are some of the projects I've contributed to.
+    </p>
 
     <ul role="list" class="link-card-grid"></ul>
 
     <section class="contributions-section">
-      <h2>Contributions</h2>
       <ul role="list" class="contribution-card-grid">
         <Card
         href="https://github.com/Patchwork-Archive"
@@ -21,8 +22,7 @@ import MiniCard from "../components/MiniCard.astro";
         contribution="Maintainer and creator of project"
         language="Javascript"
         languageColor="#f1e05a"
-        logoSrc="https://avatars.githubusercontent.com/u/145537335?s=200&v=4"
-        logoWidth="150px"
+        year="2023"
       />
         <Card
           href="https://github.com/pinapelz/Sapphire"
@@ -31,29 +31,24 @@ import MiniCard from "../components/MiniCard.astro";
           contribution="Bug fixes + Reverse engineered and implemented quests"
           language="C++"
           languageColor="#f34b7d"
-          logoWidth="300px"
-          logoSrc="https://1852825540-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FoWEO5F5fxBARvfBEby5l%2Fuploads%2FN0KFeaD6TNNdujlRXgrw%2Fsapphire_logo.png?alt=media&token=79fdc373-8bf7-41e0-bf66-fb3eaf67d2ca"
+          year="2023"
         />
-        <div class="card-container">
-          <MiniCard
+          <Card
             href="https://github.com/EBro912/Holodex.NET"
             title="Holodex.NET"
             body="A C# wrapper for the Holodex API "
             language="C#"
             languageColor="#178600"
-            logoSrc="https://camo.githubusercontent.com/259199b315aaf21baf8665a6613a2c0ffb404ad9fbf3f8441e8d0100a1a71937/68747470733a2f2f692e696d6775722e636f6d2f69527967754c672e706e67"
-            logoWidth="150px"
+            year="2023"
           />
-          <MiniCard
+          <Card
             href="https://github.com/icssc/AntAlmanac"
             title="AntAlmanac"
             body="A course exploration and scheduling tool for UCI Anteaters"
             language="TypeScript"
             languageColor="#2b7489"
-            logoSrc="https://github.com/icssc/AntAlmanac/raw/main/apps/antalmanac/public/banner.png"
-            logoWidth="300px"
+            year="2023"
           />
-        </div>
       </ul>
     </section>
   </main>
@@ -61,6 +56,10 @@ import MiniCard from "../components/MiniCard.astro";
   <SocialNavbar />
 
   <style>
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
     main {
       margin: auto;
       padding: 1rem;
