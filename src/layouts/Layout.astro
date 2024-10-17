@@ -1,59 +1,81 @@
 ---
 interface Props {
-	title: string;
+    title: string;
 }
 
 const { title } = Astro.props;
-import Header from '../components/Header.astro';
+import Header from "../components/Header.astro";
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Welcome to my site. My vocabulary is volcano" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<Header />
-	<body>
-		<slot />
-	</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="description"
+            content="Welcome to my site. My vocabulary is volcano"
+        />
+        <meta name="viewport" content="width=device-width" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+    </head>
+    <Header />
+    <body>
+        <slot />
+    </body>
+
+    <style is:global>
+        :root {
+            --accent: 204, 102, 102;
+            --accent-light: 255, 153, 153;
+            --accent-dark: 153, 0, 0;
+            --accent-gradient: linear-gradient(
+                45deg,
+                rgb(var(--accent)),
+                rgb(var(--accent-light)) 30%,
+                white 60%
+            );
+            --accent-gradient-purp: linear-gradient(
+                45deg,
+                rgb(139, 101, 194),
+                rgb(145, 108, 219) 30%,
+                rgb(230, 230, 250) 60%
+            );
+        }
+        html {
+            font-family: system-ui, sans-serif;
+            background: #13151a;
+            background-size: 224px;
+        }
+        code {
+            font-family:
+                Menlo,
+                Monaco,
+                Lucida Console,
+                Liberation Mono,
+                DejaVu Sans Mono,
+                Bitstream Vera Sans Mono,
+                Courier New,
+                monospace;
+        }
+    </style>
+
 </html>
-<style is:global>
-	:root {
-		--accent: 204, 102, 102;
-		--accent-light: 255, 153, 153;
-		--accent-dark: 153, 0, 0;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-		--accent-gradient-purp: linear-gradient(
-			45deg,
-			rgb(139, 101, 194),       
-			rgb(145, 108, 219) 30%,
-			rgb(230, 230, 250) 60% 
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-</style>
