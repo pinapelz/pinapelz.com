@@ -3,86 +3,103 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 ---
 
 <style>
-  .dark-social-navbar-wrapper {
-    display: flex;
-    margin-top: 5px;
-    justify-content: center;
-  }
+    .dark-social-navbar-wrapper {
+        display: flex;
+        margin-top: 5px;
+        justify-content: center;
+    }
 
-  .dark-social-navbar {
-    display: flex;
-    gap: 15px;
-    padding: 10px 20px;
-    border-radius: 8px;
-  }
+    .dark-social-navbar {
+        display: flex;
+        gap: 15px;
+        padding: 10px 20px;
+        border-radius: 8px;
+    }
 
-  .dark-social-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #3a3f4b;
-    color: #fff;
-    text-decoration: none;
-    transition:
-      background-color 0.3s ease,
-      transform 0.3s ease;
-  }
+    .dark-social-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #3a3f4b;
+        color: #fff;
+        text-decoration: none;
+        transition:
+            background-color 0.3s ease,
+            transform 0.3s ease;
+    }
 
-  .dark-social-icon:hover::before {
-  content: attr(title);
-  background-color: #333;
-  color: #fff;
-  padding: 4px 8px;
-  border-radius: 4px;
-  position: absolute;
-  bottom: 120%;
-  left: 50%;
-  transform: translateX(-50%);
-  white-space: nowrap;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-  .dark-social-icon:hover::before {
-    opacity: 1;
-  }
+    .dark-social-icon:hover::before {
+        content: attr(title);
+        background-color: #333;
+        color: #fff;
+        padding: 4px 8px;
+        border-radius: 4px;
+        position: absolute;
+        bottom: 120%;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    .dark-social-icon:hover::before {
+        opacity: 1;
+    }
 
-  .dark-social-icon:hover {
-    background-color: #4a4f5b;
-    transform: scale(1.1);
-  }
+    .dark-social-icon:hover {
+        background-color: #4a4f5b;
+        transform: scale(1.1);
+    }
 </style>
 
 <div class="dark-social-navbar-wrapper">
-  <div class="dark-social-navbar">
-    <a
-      href="https://github.com/pinapelz"
-      class="dark-social-icon"
-      title="GitHub"><i class="fab fa-github"></i></a
-    >
-    <a
-      href="https://twitter.com/pinapelz"
-      class="dark-social-icon"
-      title="Twitter/X"><i class="fab fa-x-twitter"></i></a
-    >
-    <a href="https://blog.pinapelz.com" class="dark-social-icon" title="Blog"
-      ><i class="fa fa-book"></i></a
-    >
-    <a
-      href="https://discord.com/users/246787839570739211"
-      title="Discord"
-      class="dark-social-icon"><i class="fab fa-discord"></i></a
-    >
-    <a href="mailto:yukais@pinapelz.com" class="dark-social-icon" title="Email"
-      ><i class="fa fa-envelope"></i></a
-    >
-    <a href="https://pinapelz.moe" class="dark-social-icon" title="pinapelz.moe"
-      ><i class="fa fa-globe"></i></a
-    >
-    <a href="/Yukai_Shan.asc" class="dark-social-icon" title="PGP"
-      ><i class="fa fa-key"></i></a
-      >
-  </div>
+    <div class="dark-social-navbar">
+        <a
+            href="https://github.com/pinapelz"
+            class="dark-social-icon"
+            title="GitHub"><i class="fab fa-github"></i></a
+        >
+        <a
+            href="https://twitter.com/pinapelz"
+            class="dark-social-icon"
+            title="Twitter/X"><i class="fab fa-x-twitter"></i></a
+        >
+        <a
+            href="https://bsky.app/profile/pinapelz.moekyun.me"
+            class="dark-social-icon"
+            title="Bluesky"><img src="Bluesky_Logo.svg" width="60%" /></a
+        >
+        <a
+            href="https://mk.arks.cafe/@pinapelz"
+            class="dark-social-icon"
+            title="Fediverse (Misskey)"
+            ><img src="fediverse.svg" width="75%" /></a
+        >
+        <a
+            href="https://discord.com/users/246787839570739211"
+            title="Discord"
+            class="dark-social-icon"><i class="fab fa-discord"></i></a
+        >
+        <a
+            href="mailto:yukais@pinapelz.com"
+            class="dark-social-icon"
+            title="Email"><i class="fa fa-envelope"></i></a
+        >
+        <a
+            href="https://blog.pinapelz.com"
+            class="dark-social-icon"
+            title="Blog"><i class="fa fa-book"></i></a
+        >
+        <a
+            href="https://pinapelz.moe"
+            class="dark-social-icon"
+            title="pinapelz.moe"><i class="fa fa-globe"></i></a
+        >
+        <a href="/Yukai_Shan.asc" class="dark-social-icon" title="PGP"
+            ><i class="fa fa-key"></i></a
+        >
+    </div>
 </div>
