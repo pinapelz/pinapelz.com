@@ -8,6 +8,8 @@ interface Props {
   languageColor: string;
   contribution?: string;
   tags?: string[];
+  image?: string;
+  imageAlt?: string;
 }
 
 const {
@@ -19,152 +21,212 @@ const {
   contribution = "",
   year,
   tags,
+  image,
+  imageAlt,
 } = Astro.props;
 ---
 
 <li class="link-card">
   <a href={href}>
-    <div class="content-container">
-      <h2>{title} {year ? `(${year})` : ""}</h2>
-      <div class="language-container">
-        <span class="dot" style={{ backgroundColor: languageColor }}></span>
-        <span class="language">{language}</span>
-      </div>
-      {
-        tags && tags.length > 0 && (
-          <div class="tags-container">
-            {tags.map((tag) => (
-              <span class="tag">{tag}</span>
-            ))}
+    <div class="card-layout">
+      <div class="content-container">
+        <div class="header-section">
+          <h2>{title} {year ? `(${year})` : ""}</h2>
+          <div class="meta-info">
+            <div class="language-container">
+              <span class="dot" style={{ backgroundColor: languageColor }}></span>
+              <span class="language">{language}</span>
+            </div>
+            {
+              tags && tags.length > 0 && (
+                <div class="tags-container">
+                  {tags.map((tag) => (
+                    <span class="tag">{tag}</span>
+                  ))}
+                </div>
+              )
+            }
           </div>
-        )
-      }
-      <p>{body}</p>
-      <p>{contribution}</p>
+        </div>
+        <div class="description">
+          <p>{body}</p>
+          {contribution && <p class="contribution">{contribution}</p>}
+        </div>
+      </div>
+      {image && (
+        <div class="image-container">
+          <img src={image} alt={imageAlt || title} />
+        </div>
+      )}
     </div>
   </a>
 </li>
 
 <style>
-  .tags-container {
-    display: flex;
-    gap: 5px;
-  }
-
-  .tag {
-    background-color: #4d4e4e;
-    color: #ffffff;
-    padding: 2px 6px;
-    font-size: 12px;
-    font-weight: 600;
-    border-radius: 20px;
-    display: inline-block;
-  }
-
   .link-card {
     list-style: none;
     display: flex;
-    padding: 1px;
+    margin-bottom: 2rem;
     background-color: #23262d;
     background-image: none;
     background-size: 400%;
-    border-radius: 7px;
+    border-radius: 12px;
     background-position: 100%;
-    align-items: flex-start;
     transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
     position: relative;
     overflow: hidden;
+    min-height: 200px;
   }
+
   .link-card > a {
     width: 100%;
     text-decoration: none;
-    line-height: 1.4;
-    padding: calc(1.5rem - 1px);
-    border-radius: 8px;
+    line-height: 1.6;
     color: white;
     background-color: #23262d;
-    opacity: 0.8;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
+    opacity: 0.9;
+    display: block;
     position: relative;
     box-sizing: border-box;
     height: 100%;
   }
+
+  .card-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    min-height: 200px;
+  }
+
+  .image-container {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+  }
+
   .content-container {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin-bottom: 0;
+    gap: 1rem;
   }
-  h2 {
-    margin: 0;
-    font-weight: bold;
-    font-size: 1.25rem;
-    transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+
+  .header-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
   }
-  p {
-    margin-top: 0.5rem;
-    margin-bottom: 0;
+
+  .meta-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
   }
-  .separator {
-    height: 1px;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.1);
-  }
+
   .language-container {
     display: flex;
     align-items: center;
     gap: 5px;
-    margin: 0;
   }
+
   .dot {
     width: 10px;
     height: 10px;
     border-radius: 50%;
     display: inline-block;
   }
+
   .language {
     font-weight: bold;
     font-size: 1rem;
     color: rgba(255, 255, 255, 0.8);
   }
+
+  .tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tag {
+    background-color: #4d4e4e;
+    color: #ffffff;
+    padding: 4px 8px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 20px;
+    display: inline-block;
+  }
+
+  .description {
+    flex: 1;
+  }
+
+  h2 {
+    margin: 0;
+    font-weight: bold;
+    font-size: 1.5rem;
+    transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .contribution {
+    margin-top: 0.5rem;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
   .link-card:is(:hover, :focus-within) {
     background-position: 0;
     background-image: var(--accent-gradient);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
   }
+
   .link-card:is(:hover, :focus-within) h2 {
     color: rgb(var(--accent-light));
   }
-  @media (max-width: 1020px) {
-    .link-card {
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      max-width: 100%;
-      width: 100%px;
-      word-wrap: break-word;
+
+  @media (max-width: 768px) {
+    .card-layout {
+      gap: 1rem;
+      padding: 1rem;
     }
-    p {
+
+    .meta-info {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .tags-container {
       margin-top: 0.5rem;
-      margin-bottom: 0;
-      font-size: 24px;
+    }
+
+    h2 {
+      font-size: 1.25rem;
     }
   }
 
-  .logo-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem 0;
-  }
-  .logo-container img {
-    max-width: 60%;
-    height: auto;
-    border-radius: 8px;
+  @media (max-width: 480px) {
+    .meta-info {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 </style>

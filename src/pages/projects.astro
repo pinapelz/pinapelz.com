@@ -10,116 +10,125 @@ import Card from "../components/Card.astro";
     <p class="text-center mb-4">
       Here are some of my projects. I love tinkering with stuff so for a more complete list, visit my <a class="font-bold" href="https://github.com/pinapelz">Github</a>
       </br>
-      <a href="https://github.com/pulls?q=author%3Apinapelz+-repo%3Apinapelz%2Fupptime+-repo%3Apinapelz%2Fpinapelz+-user%3Apinapelz" class="mt-2 hover:underline text-center font-bold text-3xl animate-pulse">Open Source Contributions</a>
+      <a href="https://github.com/pulls?q=is%3Apr+is%3Amerged+author%3Apinapelz+-repo%3Apinapelz%2Fupptime+-repo%3Apinapelz%2Fpinapelz+-user%3Apinapelz" class="mt-2 hover:underline text-center font-bold text-3xl animate-pulse">Open Source Contributions</a>
     </p>
-    <ul role="list" class="link-card-grid">
+    <ul role="list" class="project-list">
       <Card
-        href="https://github.com/pinapelz/ytmp3AutoTag"
-        title="ytID3AutoTag"
-        body="JSwing application that downloads YouTube videos as MP3 and automatically tags the ID3 fields throughing inferring the video metadata"
-        language="Java"
-        languageColor="#b07219"
-        year="2022"
-        tags={["Java", "Swing"]}
+        href="https://patchwork.moekyun.me"
+        title="Patchwork Archive"
+        body="A comprehensive archival system designed to streamline the preservation of YouTube videos at scale. The project consists of three main components: a React-based frontend for managing archival requests and viewing archived content, a Python Flask backend API that handles authentication and database operations, and a distributed worker system that processes archival jobs. The system supports automatic metadata extraction, thumbnail preservation, and efficient storage using S3-compatible backends. Built with scalability in mind, it can handle concurrent archival of thousands of videos."
+        language="Javascript"
+        languageColor="#f1e05a"
+        year="2023"
+        image="/assets/patchwork.png"
+        imageAlt="Screenshot of Patchwork Archive site"
+        tags={["React", "Python", "MySQL" , "S3 Storage", "TailwindCSS"]}
       />
-            <Card
-        href="https://github.com/pinapelz/yet-another-lavaplayer-bot"
-        title="Yet Another Lavaplayer Bot"
-        body="Self-hosted JDA Discord music bot that uses Lavaplayer to play music from YouTube, Soundcloud, etc in Discord voice channels"
-        language="Java"
-        languageColor="#b07219"
-        year="2022"
-        tags={["Java", "JDA"]}
+      <Card
+        href="https://github.com/pinapelz/tiny-time-tracker"
+        title="tiny-time-tracker"
+        body="A lightweight and efficient game time tracking application written in Rust, specifically designed for Windows systems. Unlike traditional time trackers that rely on resource-intensive polling, this application leverages Windows' native process monitoring APIs and event notifications to detect when applications start and stop. The tracker features a clean web-based dashboard built with Askama templating and styled with Tailwind CSS, allowing users to view detailed statistics about their gaming habits."
+        language="Rust"
+        languageColor="#dea584"
+        year="2025"
+        tags={["Rust", "Askama", "Tailwind", "Windows API", "SQLite"]}
+      />
+      <Card
+        href="https://github.com/pinapelz/NijiTrack"
+        title="Nijitrack"
+        body="A sophisticated data analytics platform built to track and analyze YouTube channel statistics over time, with a particular focus on VTuber and content creator metrics. The application combines a Python backend that continuously collects subscriber counts, view metrics, and other channel data through the YouTube API, with a Next.js frontend that provides interactive charts and historical analysis. Features a responsive dashboard that allows users to compare multiple channels and identify growth trends."
+        language="Python"
+        languageColor="#3572A5"
+        year="2023"
+        image="/assets/phase-tracker.png"
+        tags={["Python", "Next.js", "Tailwind", "SSR", "Chart.js", "PostgreSQL", "YouTube API"]}
       />
       <Card
         href="https://github.com/pinapelz/brokenithm-evolved-ios-umi"
         title="brokenithm-evolved-ios-umi"
-        body="A low-level bridge that converts chuniio IO input and UMIGURI LED signals to brokenitm-evolved compatible iOS apps"
+        body="An innovative low-level bridge application that enables iOS devices to function as controllers for rhythm games through the Brokenithm protocol. This project interfaces directly with chuniio hardware input systems and translates UMIGURI LED lighting signals into a format compatible with iOS applications. The bridge handles real-time input translation with minimal latency, ensuring that touch inputs from iOS devices are accurately transmitted to the game system. It features custom protocol implementations for both input capture and LED synchronization, making it possible to enjoy arcade-style rhythm gaming experiences using mobile devices as authentic controllers."
         language="Python"
         languageColor="#3572A5"
         year="2025"
         tags={["Python", "C#"]}
       />
       <Card
-        href="https://github.com/pinapelz/NijiTrack"
-        title="Nijitrack"
-        body="Python and Next application that records and collects historical subscriber count for any subset of YouTube channels."
-        language="Python"
-        languageColor="#3572A5"
+        href="https://github.com/pinapelz/JHolodex"
+        title="JHolodex"
+        body="A comprehensive, object-oriented Java wrapper library for the Holodex API, designed to provide developers with easy access to VTuber and virtual content creator data. Built using Retrofit2 for efficient HTTP operations and following modern Java development practices, the library offers a clean, intuitive interface for querying channel information, video metadata, and live stream data. The project includes extensive documentation, unit tests, and is published on Maven Central for easy integration into Java projects. It demonstrates proper API design patterns, error handling, and asynchronous programming techniques while maintaining high code quality standards."
+        language="Java"
+        languageColor="#b07219"
         year="2023"
-        tags={["Python", "Next", "Tailwind", "SSR"]}
+        tags={["Java", "Retrofit2", "Maven Central", "REST API"]}
       />
       <Card
-      href="https://github.com/pinapelz/JHolodex"
-      title="JHolodex"
-      body="Object-Oriented Java wrapper for the Holodex API written with Retrofit2. Published on Maven Central"
-      language="Java"
-      languageColor="#b07219"
-      year="2023"
-      tags={["Java", "Retrofit2", "Maven"]}
-    />
+        href="https://github.com/pinapelz/573-updates"
+        title="573-UPDATES"
+        body="A highly modular and extensible web scraping and news aggregation system specifically designed for arcade gaming communities. The project features a Python-based scraper that monitors multiple sources for game updates, patch notes, and community announcements, automatically parsing and standardizing the data into JSON format. The frontend is a modern React single-page application built with TypeScript that presents the aggregated news in an intuitive, filterable interface. The system's modular architecture makes it easy to add new data sources and customize the presentation layer, while automated deployment pipelines ensure that the latest information is always available"
+        language="Typescript"
+        languageColor="#3178c6"
+        year="2025"
+        image="assets/573.png"
+        imageAlt="573-UPDATES site screenshot"
+        tags={["React", "TypeScript", "Python", "Web Scraping"]}
+      />
       <Card
-        href="https://github.com/Patchwork-Archive"
-        title="Patchwork Archive"
-        body="An archival system to help streamline the preservation of any subset of YouTube videos. Fully featured frontend, backend, and worker system for archival"
-        language="Javascript"
-        languageColor="#f1e05a"
+        href="https://github.com/pinapelz/ffxiv-chronowatcher"
+        title="ffxiv-chronowatcher"
+        body="A precision-engineered Rust library that provides accurate calculations for Final Fantasy XIV's in-game time system (Eorzean Time) and weather forecasting. The library implements the game's complex time conversion algorithms and weather generation systems, allowing developers to predict future weather patterns for all game zones with perfect accuracy. It features comprehensive unit testing to ensure reliability, extensive documentation with examples, and is published on crates.io for easy integration into Rust projects. The library is particularly valuable for developed who want to integrate in-game time based calculations into their Rust applications"
+        language="Rust"
+        languageColor="#dea584"
+        year="2024"
+        tags={["Rust", "Crates.io"]}
+      />
+      <Card
+        href="https://blog.pinapelz.com"
+        title="Personal Blog"
+        body="A modern, performance-focused personal blog built with Astro that serves as a platform for sharing technical insights, project updates, and thoughts on software development. The blog utilizes MDX (Markdown + JSX) to combine the simplicity of markdown writing with the interactive capabilities of React components, enabling rich content with embedded demos and interactive elements. The site features a clean, responsive design with excellent SEO optimization, fast loading times, and accessibility compliance. Topics range from detailed technical tutorials and project breakdowns to industry observations and personal development experiences in software engineering."
+        language="Astro"
+        languageColor="#ff5a03"
         year="2023"
-        tags={["React", "Python", "MySQL" , "S3 Storage", "Tailwind"]}
+        tags={["Astro", "MDX", "React"]}
+      />
+      <Card
+        href="https://github.com/pinapelz/ytmp3AutoTag"
+        title="ytID3AutoTag"
+        body="A Java Swing desktop application that automates the process of downloading YouTube videos as high-quality MP3 files and intelligently tags them with proper ID3 metadata. The application analyzes video titles, descriptions, and other metadata to automatically populate artist names, song titles, album information, and other relevant tags. It features a user-friendly GUI built with Swing designed for batch processing capabilities. The tool significantly streamlines the workflow for users who want to build properly organized music libraries from YouTube content while maintaining high audio quality standards."
+        language="Java"
+        languageColor="#b07219"
+        year="2022"
+        tags={["Java", "Swing"]}
+      />
+      <Card
+        href="https://github.com/pinapelz/yet-another-lavaplayer-bot"
+        title="Yet Another Lavaplayer Bot"
+        body="A feature-rich, self-hosted Discord music bot built with the Java Discord API (JDA) and Lavaplayer audio framework. The bot supports playback from multiple sources including YouTube, SoundCloud, Bandcamp, and direct audio links, with advanced queue management, playlist support, and audio filtering capabilities. It includes comprehensive command handling and user permission systems. The project provides a reliable, high-quality audio streaming experience for Discord servers of any size."
+        language="Java"
+        languageColor="#b07219"
+        year="2022"
+        tags={["Java", "JDA", "Discord Bot", "Lavaplayer", "Audio Streaming", "Async Programming"]}
       />
       <Card
         href="https://github.com/pinapelz/moekyun-me-link-shortener"
         title="Moekyun Me Link Shortener"
-        body="A self-hosted Flask link shortner template that aims to be a one-click deployment on serverless platforms"
+        body="A self-hosted URL shortening service built with Flask and designed for easy deployment on serverless platforms. The application features a clean, minimalist interface with custom short URL generations. It uses PostgreSQL for data persistence and Redis for caching frequently accessed URLs, ensuring fast response times even under heavy load. The project can be deployed in 1-click through Vercel making it accessible for users with different technical backgrounds and hosting preferences."
         language="Python"
         languageColor="#3572A5"
         year="2023"
-        tags={["HTML", "Flask", "Python", "Postgres", "Redis"]}
+        image="assets/link.png"
+        imageAlt="Moekyun Link Shortener Screenshot"
+        tags={["Python", "Flask", "PostgreSQL", "Redis"]}
       />
-      <Card
-        href="https://github.com/pinapelz/tiny-time-tracker"
-        title="tiny-time-tracker"
-        body="A tiny Rust game playtime tracker for Windows that works for any executable. Takes advantage of existing OS utilities to avoid polling. "
-        language="Rust"
-        languageColor="#dea584"
-        year="2025"
-        tags={["Rust", "Askama", "Tailwind"]}
-      />
-      <Card
-      href="https://blog.pinapelz.com"
-      title="Personal Blog"
-      body="My personal blog where I ramble about various technical topics, projects, and other things that interest me. Written in Astro and uses MDX which combines the ease of markdown with the interactivity of React"
-      language="Astro"
-      languageColor="#ff5a03",
-      year="2023"
-      tags={["Astro", "HTML", "Javascript", "MDX", "Markdown"]}
-    />
-      <Card
-        href="https://github.com/pinapelz/573-updates"
-        title="573-UPDATES"
-        body="A highly modular scraper and news site for various arcade games. Scrapes to JSON and deploys to a SPA"
-        language="Typescript"
-        languageColor="#3178c6",
-        year="2025"
-        tags={["React", "Typescript", "Python"]}
-      />
-      <Card
-      href="https://github.com/pinapelz/ffxiv-chronowatcher"
-      title="ffxiv-chronowatcher"
-      body="A Rust library for calculating Eorzean time and predicting future zone forecasts in Final Fantasy XIV. Unittested and published on crates.io"
-      language="Rust"
-      languageColor="#dea584",
-      year="2024"
-      tags={["Rust", "Crates.io"]}
-    />
       <Card
         href="https://github.com/pinapelz/ffxiv-malmstone"
         title="Malmstone Calculator"
-        body="A IMGui Final Fantasy XIV Dalamud Plugin that hooks into the game and tells you how many more PVP matches you have to play to reach your target goal"
+        body="A specialized Final Fantasy XIV Dalamud plugin that provides real-time PvP progression tracking and goal-setting functionality directly within the game interface. Built with ImGui for seamless integration with the game's UI, the plugin hooks into the game to fetch necessary information and calculates exactly how many matches are needed to reach player-defined goals. It features customizable target tracking, match history analysis, and estimated time-to-completion calculations based on average win rate probabilities"
         language="C#"
         languageColor="#178600"
         year="2023"
-        tags={["ImGui", "Dalamud"]}
+        image="assets/malmstone.png"
+        imageAlt="FFXIV Malmstone Plugin Screenshot"
+        tags={["C#", "ImGui"]}
       />
     </ul>
     <br/>
@@ -138,20 +147,12 @@ import Card from "../components/Card.astro";
     a{
       color: white;
     }
-    .link-card-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(24ch, 1fr));
-      gap: 2rem;
+    .project-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
       padding: 0;
-    }
-    @media (max-width: 1020px) {
-      .link-card-grid {
-        display: grid;
-        grid-template-columns: repeat(1, minmax(24ch, 1fr));
-        gap: 2rem;
-        padding: 0;
-        width: 100%;
-      }
+      list-style: none;
     }
   </style>
 </Layout>
