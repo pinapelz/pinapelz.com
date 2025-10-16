@@ -49,13 +49,29 @@ const {
           </div>
         </div>
         <div class="description">
-          <p>{body}</p>
+          <div class="bullet-list" set:html={body.split('\n').map(line => 
+            line.trim().startsWith('•') ? 
+            `<div class="bullet-item"><span class="bullet">•</span>${line.substring(1)}</div>` : 
+            line
+          ).join('\n')} />
           {contribution && <p class="contribution">{contribution}</p>}
         </div>
       </div>
-      {image && (
-        <div class="image-container">
-          <img src={image} alt={imageAlt || title} />
+      {image ? (
+        <div class="image-wrapper" onclick="event.stopPropagation();">
+          <div class="image-container">
+            <img src={image} alt={imageAlt || title} />
+            <div class="image-overlay">
+              <span class="zoom-icon">🔍</span>
+            </div>
+          </div>
+        </div>
+      ) : (
+        <div class="no-image-placeholder">
+          <div class="placeholder-content">
+            <span class="placeholder-icon">✨</span>
+            <span class="placeholder-text">View Project</span>
+          </div>
         </div>
       )}
     </div>
@@ -66,17 +82,17 @@ const {
   .link-card {
     list-style: none;
     display: flex;
-    margin-bottom: 2rem;
     background-color: #23262d;
     background-image: none;
     background-size: 400%;
     border-radius: 12px;
     background-position: 100%;
-    transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), 0 4px 10px rgba(0, 0, 0, 0.1);
     position: relative;
     overflow: hidden;
     min-height: 200px;
+    height: 100%;
   }
 
   .link-card > a {
@@ -85,38 +101,114 @@ const {
     line-height: 1.6;
     color: white;
     background-color: #23262d;
-    opacity: 0.9;
+    opacity: 0.95;
     display: block;
     position: relative;
     box-sizing: border-box;
     height: 100%;
+    padding: 0;
   }
 
   .card-layout {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 1.5rem;
-    padding: 1.5rem;
-    min-height: 200px;
+    padding: 1.75rem;
+    min-height: 220px;
+    height: 100%;
+  }
+
+  .image-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
   }
 
   .image-container {
     width: 100%;
+    max-width: 350px;
     border-radius: 8px;
     overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    background-color: #1a1c21;
+    padding: 0.5rem;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .no-image-placeholder {
+    width: 100%;
+    height: 180px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1d1f25;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    transition: all 0.2s ease;
+  }
+
+  .placeholder-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    transition: all 0.2s ease;
+  }
+
+  .placeholder-icon {
+    font-size: 2rem;
+  }
+
+  .placeholder-text {
+    font-size: 1rem;
+    font-weight: 500;
   }
 
   .image-container img {
     width: 100%;
-    height: auto;
     object-fit: contain;
-    border-radius: 8px;
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+    max-height: 200px;
+  }
+  
+  .image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease;
+  }
+  
+  .zoom-icon {
+    color: white;
+    font-size: 1.5rem;
+  }
+  
+  .image-container:hover .image-overlay {
+    opacity: 1;
+  }
+  
+  .image-container:hover img {
+    transform: scale(1.05);
   }
 
   .content-container {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.25rem;
   }
 
   .header-section {
@@ -128,7 +220,7 @@ const {
   .meta-info {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.75rem;
   }
 
   .language-container {
@@ -154,34 +246,68 @@ const {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+    margin-top: 0.25rem;
   }
 
   .tag {
     background-color: #4d4e4e;
     color: #ffffff;
-    padding: 4px 8px;
-    font-size: 12px;
+    padding: 5px 10px;
+    font-size: 0.7rem;
     font-weight: 600;
     border-radius: 20px;
     display: inline-block;
+    transition: background-color 0.2s ease;
   }
 
   .description {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
   }
 
   h2 {
     margin: 0;
     font-weight: bold;
     font-size: 1.5rem;
-    transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: color 0.3s ease;
+    line-height: 1.3;
   }
 
-  p {
+  p, .bullet-list {
     margin: 0;
-    font-size: 1rem;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.85);
+    max-height: none;
+    overflow: visible;
+    text-overflow: ellipsis;
+  }
+  
+  .bullet-list {
+    white-space: pre-line;
+  }
+  
+  .bullet-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  /* Style for bullet points in descriptions */
+  .bullet-item {
+    position: relative;
+    padding-left: 1.25rem;
+    margin-bottom: 0.1rem;
+    line-height: 1.4;
+  }
+
+  .bullet {
+    position: absolute;
+    left: 0;
+    color: rgb(139, 92, 246);
+    font-weight: bold;
   }
 
   .contribution {
@@ -193,18 +319,63 @@ const {
   .link-card:is(:hover, :focus-within) {
     background-position: 0;
     background-image: var(--accent-gradient);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+  }
+
+  .link-card:is(:hover, :focus-within) .image-container:not(:hover) img {
+    transform: scale(1.02);
+  }
+
+  .link-card:is(:hover, :focus-within) .no-image-placeholder .placeholder-content {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .link-card:is(:hover, :focus-within) .tag {
+    background-color: #5d5e5e;
   }
 
   .link-card:is(:hover, :focus-within) h2 {
     color: rgb(var(--accent-light));
   }
 
-  @media (max-width: 768px) {
+  @media (min-width: 768px) {
     .card-layout {
-      gap: 1rem;
-      padding: 1rem;
+      grid-template-columns: 3fr 2fr;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .card-layout:has(.image-wrapper) .content-container {
+      grid-column: 1;
+    }
+
+    .card-layout .image-wrapper, 
+    .card-layout .no-image-placeholder {
+      grid-column: 2;
+      grid-row: 1;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .card-layout .image-container {
+      max-width: 100%;
+      height: auto;
+    }
+    
+    .card-layout .no-image-placeholder {
+      min-height: 200px;
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .card-layout {
+      gap: 1.25rem;
+      padding: 1.25rem;
+      grid-template-columns: 1fr;
     }
 
     .meta-info {
@@ -221,12 +392,47 @@ const {
     h2 {
       font-size: 1.25rem;
     }
+
+    .image-wrapper,
+    .no-image-placeholder {
+      order: -1;
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+    
+    .image-container {
+      max-width: 100%;
+      margin: 0 auto;
+    }
+    
+    .no-image-placeholder {
+      height: 160px;
+    }
   }
 
   @media (max-width: 480px) {
     .meta-info {
       flex-direction: column;
       align-items: flex-start;
+    }
+
+    .card-layout {
+      padding: 1.1rem;
+      gap: 1rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .tags-container {
+      margin-top: 0.25rem;
+    }
+
+    .tag {
+      padding: 4px 8px;
+      font-size: 0.65rem;
     }
   }
 </style>

@@ -6,17 +6,42 @@ import Card from "../components/Card.astro";
 
 <Layout title="Projects">
   <main>
-    <h1 class="text-4xl font-semibold text-center py-6">Projects</h1>
-    <p class="text-center mb-4">
-      Here are some of my projects. I love tinkering with stuff so for a more complete list, visit my <a class="font-bold" href="https://github.com/pinapelz">Github</a>
-      </br>
-      <a href="https://github.com/pulls?q=is%3Apr+is%3Amerged+author%3Apinapelz+-repo%3Apinapelz%2Fupptime+-repo%3Apinapelz%2Fpinapelz+-user%3Apinapelz" class="mt-2 hover:underline text-center font-bold text-3xl animate-pulse">Open Source Contributions</a>
-    </p>
-    <ul role="list" class="project-list">
+    <div class="header-container">
+      <h1 class="text-4xl font-semibold text-center py-6">Projects</h1>
+      <p class="text-center mb-8">
+        Here are some of my projects. I love tinkering with stuff so for a more complete list, visit my <a class="font-bold hover:underline hover:text-blue-300 transition-colors" href="https://github.com/pinapelz">Github</a>
+        <br />
+        <a href="https://github.com/pulls?q=is%3Apr+is%3Amerged+author%3Apinapelz+-repo%3Apinapelz%2Fupptime+-repo%3Apinapelz%2Fpinapelz+-user%3Apinapelz" class="mt-6 inline-block hover:underline text-center font-bold text-2xl animate-pulse hover:text-blue-300 transition-colors">Open Source Contributions</a>
+      </p>
+    </div>
+    <ul role="list" class="project-grid">
+      <Card
+        href="https://github.com/pinapelz/Mirage"
+        title="Mirage"
+        body={`• Rhythm game score tracker that preserves scores across games - even niche ones
+• No reliance on predefined seeds or chart metadata
+• Import & track scores to keep a safe backup of your game progress
+• Support for any rhythm game, even without official metadata
+• Self-host for group tracking or use locally
+• Multi-user system with customizable permissions
+• Pre-loaded tracking for DANCERUSH, DANCE aROUND, Project DIVA, MUSIC DIVER, Nostalgia, and REFLEC BEAT`}
+        language="TypeScript"
+        languageColor="#3178c6"
+        year="2024"
+        image="/mirage.png"
+        imageAlt="Mirage score tracker interface screenshot"
+        tags={["React", "TypeScript", "Express", "Prisma ORM", "PostgreSQL"]}
+      />
       <Card
         href="https://patchwork.moekyun.me"
         title="Patchwork Archive"
-        body="A comprehensive archival system designed to streamline the preservation of YouTube videos at scale. The project consists of three main components: a React-based frontend for managing archival requests and viewing archived content, a Python Flask backend API that handles authentication and database operations, and a distributed worker system that processes archival jobs. The system supports automatic metadata extraction, thumbnail preservation, and efficient storage using S3-compatible backends. Built with scalability in mind, it can handle concurrent archival of thousands of videos."
+        body={`• Comprehensive archival system for YouTube videos at scale
+• React-based frontend for managing requests and viewing archived content
+• Python Flask backend API for authentication and database operations
+• Distributed worker system for processing archival jobs
+• Automatic metadata extraction and thumbnail preservation
+• Efficient storage using S3-compatible backends
+• Scalable architecture handling concurrent archival of thousands of videos`}
         language="Javascript"
         languageColor="#f1e05a"
         year="2023"
@@ -27,7 +52,13 @@ import Card from "../components/Card.astro";
       <Card
         href="https://github.com/pinapelz/tiny-time-tracker"
         title="tiny-time-tracker"
-        body="A lightweight and efficient game time tracking application written in Rust, specifically designed for Windows systems. Unlike traditional time trackers that rely on resource-intensive polling, this application leverages Windows' native process monitoring APIs and event notifications to detect when applications start and stop. The tracker features a clean web-based dashboard built with Askama templating and styled with Tailwind CSS, allowing users to view detailed statistics about their gaming habits."
+        body={`• Lightweight game time tracking application written in Rust
+• Designed specifically for Windows systems
+• Uses native process monitoring APIs instead of resource-intensive polling
+• Event-based detection of when applications start and stop
+• Clean web-based dashboard built with Askama templating
+• Styled with Tailwind CSS for responsive design
+• Detailed statistics about gaming habits and playtime`}
         language="Rust"
         languageColor="#dea584"
         year="2025"
@@ -36,7 +67,13 @@ import Card from "../components/Card.astro";
       <Card
         href="https://github.com/pinapelz/NijiTrack"
         title="Nijitrack"
-        body="A sophisticated data analytics platform built to track and analyze YouTube channel statistics over time, with a particular focus on VTuber and content creator metrics. The application combines a Python backend that continuously collects subscriber counts, view metrics, and other channel data through the YouTube API, with a Next.js frontend that provides interactive charts and historical analysis. Features a responsive dashboard that allows users to compare multiple channels and identify growth trends."
+        body={`• Data analytics platform for YouTube channel statistics
+• Focus on VTuber and content creator metrics tracking
+• Python backend for continuous data collection via YouTube API
+• Tracks subscriber counts, view metrics, and other channel data
+• Next.js frontend with interactive charts and historical analysis
+• Responsive dashboard for comparing multiple channels
+• Tools to identify growth trends and performance patterns`}
         language="Python"
         languageColor="#3572A5"
         year="2023"
@@ -46,7 +83,14 @@ import Card from "../components/Card.astro";
       <Card
         href="https://github.com/pinapelz/brokenithm-evolved-ios-umi"
         title="brokenithm-evolved-ios-umi"
-        body="An innovative low-level bridge application that enables iOS devices to function as controllers for rhythm games through the Brokenithm protocol. This project interfaces directly with chuniio hardware input systems and translates UMIGURI LED lighting signals into a format compatible with iOS applications. The bridge handles real-time input translation with minimal latency, ensuring that touch inputs from iOS devices are accurately transmitted to the game system. It features custom protocol implementations for both input capture and LED synchronization, making it possible to enjoy arcade-style rhythm gaming experiences using mobile devices as authentic controllers."
+        body={`• Low-level bridge application for iOS rhythm game controllers
+• Interfaces with the Brokenithm protocol for game input
+• Direct integration with chuniio hardware input systems
+• Translates UMIGURI LED lighting signals for iOS compatibility
+• Real-time input translation with minimal latency
+• Accurate transmission of touch inputs to the game system
+• Custom protocol implementations for input capture and LED synchronization
+• Enables arcade-style gaming experiences using mobile devices`}
         language="Python"
         languageColor="#3572A5"
         year="2025"
@@ -55,7 +99,14 @@ import Card from "../components/Card.astro";
       <Card
         href="https://github.com/pinapelz/JHolodex"
         title="JHolodex"
-        body="A comprehensive, object-oriented Java wrapper library for the Holodex API, designed to provide developers with easy access to VTuber and virtual content creator data. Built using Retrofit2 for efficient HTTP operations and following modern Java development practices, the library offers a clean, intuitive interface for querying channel information, video metadata, and live stream data. The project includes extensive documentation, unit tests, and is published on Maven Central for easy integration into Java projects. It demonstrates proper API design patterns, error handling, and asynchronous programming techniques while maintaining high code quality standards."
+        body={`• Object-oriented Java wrapper library for the Holodex API
+• Provides easy access to VTuber and content creator data
+• Built with Retrofit2 for efficient HTTP operations
+• Clean, intuitive interface for querying channel information
+• Access to video metadata and live stream data
+• Extensive documentation and comprehensive unit tests
+• Published on Maven Central for easy integration
+• Follows modern Java development practices and API design patterns`}
         language="Java"
         languageColor="#b07219"
         year="2023"
@@ -64,7 +115,14 @@ import Card from "../components/Card.astro";
       <Card
         href="https://github.com/pinapelz/573-updates"
         title="573-UPDATES"
-        body="A highly modular and extensible web scraping and news aggregation system specifically designed for arcade gaming communities. The project features a Python-based scraper that monitors multiple sources for game updates, patch notes, and community announcements, automatically parsing and standardizing the data into JSON format. The frontend is a modern React single-page application built with TypeScript that presents the aggregated news in an intuitive, filterable interface. The system's modular architecture makes it easy to add new data sources and customize the presentation layer, while automated deployment pipelines ensure that the latest information is always available"
+        body={`• Modular web scraping and news aggregation system for arcade gaming
+• Python-based scraper monitoring multiple news sources
+• Tracks game updates, patch notes, and community announcements
+• Automatic parsing and standardization to JSON format
+• React single-page application built with TypeScript
+• Intuitive, filterable interface for browsing aggregated news
+• Extensible architecture for adding new data sources
+• Automated deployment pipelines for content updates`}
         language="Typescript"
         languageColor="#3178c6"
         year="2025"
@@ -75,7 +133,14 @@ import Card from "../components/Card.astro";
       <Card
         href="https://github.com/pinapelz/ffxiv-chronowatcher"
         title="ffxiv-chronowatcher"
-        body="A precision-engineered Rust library that provides accurate calculations for Final Fantasy XIV's in-game time system (Eorzean Time) and weather forecasting. The library implements the game's complex time conversion algorithms and weather generation systems, allowing developers to predict future weather patterns for all game zones with perfect accuracy. It features comprehensive unit testing to ensure reliability, extensive documentation with examples, and is published on crates.io for easy integration into Rust projects. The library is particularly valuable for developed who want to integrate in-game time based calculations into their Rust applications"
+        body={`• Precision-engineered Rust library for FFXIV calculations
+• Accurate implementation of Eorzean Time system
+• Weather forecasting for all game zones with perfect accuracy
+• Complex time conversion algorithms and weather generation systems
+• Comprehensive unit testing for reliability
+• Extensive documentation with practical examples
+• Published on crates.io for easy integration
+• Valuable for developers building FFXIV-related tools`}
         language="Rust"
         languageColor="#dea584"
         year="2024"
@@ -84,7 +149,14 @@ import Card from "../components/Card.astro";
       <Card
         href="https://blog.pinapelz.com"
         title="Personal Blog"
-        body="A modern, performance-focused personal blog built with Astro that serves as a platform for sharing technical insights, project updates, and thoughts on software development. The blog utilizes MDX (Markdown + JSX) to combine the simplicity of markdown writing with the interactive capabilities of React components, enabling rich content with embedded demos and interactive elements. The site features a clean, responsive design with excellent SEO optimization, fast loading times, and accessibility compliance. Topics range from detailed technical tutorials and project breakdowns to industry observations and personal development experiences in software engineering."
+        body={`• Modern, performance-focused personal blog built with Astro
+• Platform for technical insights and project updates
+• MDX integration combining Markdown with React components
+• Rich content with embedded demos and interactive elements
+• Clean, responsive design with accessibility compliance
+• Excellent SEO optimization and fast loading times
+• Content spanning from technical tutorials to industry observations
+• Project breakdowns and software development experiences`}
         language="Astro"
         languageColor="#ff5a03"
         year="2023"
@@ -93,7 +165,14 @@ import Card from "../components/Card.astro";
       <Card
         href="https://github.com/pinapelz/ytmp3AutoTag"
         title="ytID3AutoTag"
-        body="A Java Swing desktop application that automates the process of downloading YouTube videos as high-quality MP3 files and intelligently tags them with proper ID3 metadata. The application analyzes video titles, descriptions, and other metadata to automatically populate artist names, song titles, album information, and other relevant tags. It features a user-friendly GUI built with Swing designed for batch processing capabilities. The tool significantly streamlines the workflow for users who want to build properly organized music libraries from YouTube content while maintaining high audio quality standards."
+        body={`• Java Swing desktop application for YouTube to MP3 conversion
+• Automatic ID3 metadata tagging from video information
+• Intelligent analysis of video titles and descriptions
+• Auto-population of artist names, song titles, and album info
+• User-friendly GUI designed for ease of use
+• Batch processing capabilities for multiple downloads
+• High audio quality preservation during conversion
+• Streamlined workflow for building organized music libraries`}
         language="Java"
         languageColor="#b07219"
         year="2022"
@@ -102,7 +181,14 @@ import Card from "../components/Card.astro";
       <Card
         href="https://github.com/pinapelz/yet-another-lavaplayer-bot"
         title="Yet Another Lavaplayer Bot"
-        body="A feature-rich, self-hosted Discord music bot built with the Java Discord API (JDA) and Lavaplayer audio framework. The bot supports playback from multiple sources including YouTube, SoundCloud, Bandcamp, and direct audio links, with advanced queue management, playlist support, and audio filtering capabilities. It includes comprehensive command handling and user permission systems. The project provides a reliable, high-quality audio streaming experience for Discord servers of any size."
+        body={`• Feature-rich, self-hosted Discord music bot
+• Built with Java Discord API (JDA) and Lavaplayer
+• Multi-source playback: YouTube, SoundCloud, Bandcamp, etc.
+• Advanced queue management and playlist support
+• Audio filtering and sound customization features
+• Comprehensive command handling system
+• User permission controls and moderation features
+• High-quality audio streaming for Discord servers`}
         language="Java"
         languageColor="#b07219"
         year="2022"
@@ -111,7 +197,14 @@ import Card from "../components/Card.astro";
       <Card
         href="https://github.com/pinapelz/moekyun-me-link-shortener"
         title="Moekyun Me Link Shortener"
-        body="A self-hosted URL shortening service built with Flask and designed for easy deployment on serverless platforms. The application features a clean, minimalist interface with custom short URL generations. It uses PostgreSQL for data persistence and Redis for caching frequently accessed URLs, ensuring fast response times even under heavy load. The project can be deployed in 1-click through Vercel making it accessible for users with different technical backgrounds and hosting preferences."
+        body={`• Self-hosted URL shortening service built with Flask
+• Designed for easy deployment on serverless platforms
+• Clean, minimalist interface with intuitive controls
+• Custom short URL generation and management
+• PostgreSQL for reliable data persistence
+• Redis caching for frequently accessed URLs
+• Fast response times even under heavy load
+• 1-click deployment through Vercel for easy setup`}
         language="Python"
         languageColor="#3572A5"
         year="2023"
@@ -122,7 +215,14 @@ import Card from "../components/Card.astro";
       <Card
         href="https://github.com/pinapelz/ffxiv-malmstone"
         title="Malmstone Calculator"
-        body="A specialized Final Fantasy XIV Dalamud plugin that provides real-time PvP progression tracking and goal-setting functionality directly within the game interface. Built with ImGui for seamless integration with the game's UI, the plugin hooks into the game to fetch necessary information and calculates exactly how many matches are needed to reach player-defined goals. It features customizable target tracking, match history analysis, and estimated time-to-completion calculations based on average win rate probabilities"
+        body={`• Specialized FFXIV Dalamud plugin for PvP progression tracking
+• Real-time goal-setting functionality within the game interface
+• Built with ImGui for seamless UI integration
+• Hooks into game data to fetch necessary information
+• Calculates matches needed to reach player-defined goals
+• Customizable target tracking for different rewards
+• Match history analysis and performance metrics
+• Time-to-completion estimates based on win rate probabilities`}
         language="C#"
         languageColor="#178600"
         year="2023"
@@ -131,28 +231,197 @@ import Card from "../components/Card.astro";
         tags={["C#", "ImGui"]}
       />
     </ul>
-    <br/>
-    <a href="https://knowledge.pinapelz.com/personal/tools" class="mt-2 hover:underline text-2xl animate-pulse">and also a few smaller tools...</a>
+    <div class="text-center my-12">
+      <a href="https://knowledge.pinapelz.com/personal/tools" class="inline-block hover:underline text-2xl animate-pulse transition-all hover:text-blue-300">and also a few smaller tools...</a>
+    </div>
   </main>
   <SocialNavbar />
+
+  <!-- Image Modal -->
+  <div id="imageModal" class="modal">
+    <span class="close-modal">&times;</span>
+    <img class="modal-content" id="modalImage">
+    <div id="modalCaption"></div>
+  </div>
   <style>
     main {
       margin: auto;
-      padding: 1rem;
-      max-width: 1200px;
+      padding: 2rem 1.5rem;
+      max-width: 1300px;
       color: white;
-      font-size: 20px;
+      font-size: 18px;
       line-height: 1.6;
     }
-    a{
+    a {
       color: white;
+      transition: all 0.2s ease;
     }
-    .project-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
+    .header-container {
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 1rem;
+    }
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 2.5rem;
       padding: 0;
       list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    /* Bullet point styling */
+    .bullet-style {
+      position: relative;
+      padding-left: 1.25rem;
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+
+    .bullet-style::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: rgb(139, 92, 246);
+      font-weight: bold;
+    }
+
+    @media (min-width: 768px) {
+      .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem 2.5rem;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+      }
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1500;
+      padding-top: 50px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.9);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .modal-visible {
+      opacity: 1;
+      display: block;
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 80vh;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .modal-content-visible {
+      opacity: 1;
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .close-modal:hover,
+    .close-modal:focus {
+      color: #bbb;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    #modalCaption {
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+      text-align: center;
+      color: #ccc;
+      padding: 10px 0;
+      height: 150px;
     }
   </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get all project images
+      const projectImages = document.querySelectorAll('.image-container');
+      const modal = document.getElementById('imageModal');
+      const modalImg = document.getElementById('modalImage');
+      const modalCaption = document.getElementById('modalCaption');
+      const closeBtn = document.querySelector('.close-modal');
+
+      // Add click event to each project image
+      projectImages.forEach(imgContainer => {
+        imgContainer.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+
+          const img = this.querySelector('img');
+          modal.style.display = "block";
+          setTimeout(() => {
+            modal.classList.add('modal-visible');
+          }, 10);
+
+          modalImg.src = img.src;
+          modalImg.alt = img.alt;
+          setTimeout(() => {
+            modalImg.classList.add('modal-content-visible');
+          }, 50);
+
+          modalCaption.textContent = img.alt;
+
+          return false;
+        });
+      });
+
+      // Close modal when clicking the X
+      closeBtn.addEventListener('click', closeModal);
+
+      // Close modal when clicking outside the image
+      modal.addEventListener('click', function(event) {
+        if (event.target === modal) {
+          closeModal();
+        }
+      });
+
+      // Close modal with Escape key
+      document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && modal.style.display === 'block') {
+          closeModal();
+        }
+      });
+
+      function closeModal() {
+        modal.classList.remove('modal-visible');
+        modalImg.classList.remove('modal-content-visible');
+        setTimeout(() => {
+          modal.style.display = "none";
+        }, 300);
+      }
+    });
+  </script>
 </Layout>
